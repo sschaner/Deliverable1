@@ -10,7 +10,7 @@ namespace Deliverable1
             Console.WriteLine("With this Millenial Hipster converter, we'll convert MilHip's to imperial units.");
             Console.WriteLine("The two measurements that the Millenial Hipster's have created are 'fidget spinners' and 'memes'." + Environment.NewLine);
 
-            Boolean keepPlaying = false;
+            Boolean keepPlaying;
             const double FIDGETSPINNERS = 3.5;
             const int MEMES = 5;
             do
@@ -27,13 +27,27 @@ namespace Deliverable1
                 if (measurementType == "inches" || measurementType == "inch")
                 {
                     amount *= FIDGETSPINNERS;
-                    Console.WriteLine(message + amount + " fidget spinners." + Environment.NewLine);
+                    if (amount == 1)
+                    {
+                        Console.WriteLine(message + amount + " fidget spinner." + Environment.NewLine);
+                    }
+                    else
+                    {
+                        Console.WriteLine(message + amount + " fidget spinners." + Environment.NewLine);
+                    }
                 }
                 // convert from feet to memes
                 else if (measurementType == "feet" || measurementType == "foot")
                 {
                     amount *= MEMES;
-                    Console.WriteLine(message + amount + " memes." + Environment.NewLine);
+                    if (amount == 1)
+                    {
+                        Console.WriteLine(message + amount + " meme." + Environment.NewLine);
+                    }
+                    else
+                    {
+                        Console.WriteLine(message + amount + " memes." + Environment.NewLine);
+                    }
                 }
                 // convert from fidget spinners to inches
                 else if (measurementType == "fidget spinners" || measurementType == "fidget spinner")
